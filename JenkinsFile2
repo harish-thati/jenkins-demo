@@ -4,12 +4,15 @@ pipeline {
     stages {
         stage("Job1") {
             steps {
-                sh "./scripts/job1.sh"
+                sh ' cd $WORKSPACE/scripts'
+                sh 'chmod 777 job1.sh job2.sh'
+                sh "./job1.sh"
             }
         }
 
         stage("Job2") {
             steps {
+                sh 'cd $WORKSPACE/scripts'
                 sh "./scripts/job2.sh"
             }
         }
