@@ -1,0 +1,18 @@
+pipeline {
+    agent any
+
+    stages {
+        stage("Job1") {
+            steps {
+                sh "./scripts/job1.sh"
+            }
+        }
+
+        stage("Job2") {
+            steps {
+                sh "./scripts/job2.sh"
+            }
+        }
+        
+    }
+}
